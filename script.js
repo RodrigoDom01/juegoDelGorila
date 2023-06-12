@@ -62,13 +62,28 @@ var gameOver;
             textoScore = document.querySelector(".score");
             mono = document.querySelector(".mono");
             document.addEventListener("keydown", HandleKeyDown);
+            document.addEventListener("touchstart", HandleTouchStart);
         }
 
-        function HandleKeyDown(ev){
-            if(ev.keyCode == 32){
-                Saltar();
+        function HandleInput() {
+             if (monoPosY === sueloY) {
+             saltando = true;
+             velY = impulso;
+             mono.classList.remove("mono-corriendo");
+             }
             }
-        }
+
+        function HandleKeyDown(ev) {
+             if (ev.keyCode === 32) {
+              HandleInput();
+             }
+            }
+
+        function HandleTouchStart(ev) {
+             ev.preventDefault();
+             HandleInput();
+            }
+
 
         function Saltar(){
             if(monoPosY === sueloY){
