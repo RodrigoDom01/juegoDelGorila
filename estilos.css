@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}        
+
+body{
+    height: 100vh;
+    background: #584040;
+    display: flex;
+    align-items: center;
+}
+
+
+.contenedor{
+    width: 920px;
+    height: 280px;
+    margin: 0 auto;
+
+    position: relative;
+
+    /*background: linear-gradient(#b7d6c7, #ffe2d1);*/
+    background-image: linear-gradient(to top, rgba(161, 140, 209, 0.397) 0%, rgba(251, 194, 235, 0.37) 100%),url(imagenes/selva.jpg);
+    overflow: hidden;
+}
+
+.mono{
+    width: 84px;
+    height: 65px;
+    
+    position: absolute;
+    bottom: 22px;
+    left: 42px;
+    z-index: 2;
+
+    background: url(imagenes/gorila22.png) repeat-x 0px 0px;
+    background-size: 336px 84px;
+    background-position: 0px;
+
+}
+.mono-corriendo{
+    animation: animarMono 0.25s steps(2) infinite;
+
+}
+.mono-estrellado{
+    background-position-x: -252px;
+}
+
+.suelo{
+    width: 200%;
+    height: 33px;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    background: url(imagenes/Miproyecto4.png) repeat-x 0px 0px;
+    background-size: 50% 42px;
+}
+
+.score{
+    width: 100px;
+    height: 30px;
+
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    z-index: 10;
+
+    color: #252424;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+
+.palmera{
+    width: 46px;
+    height: 96px;
+
+    position: absolute;
+    bottom: 16px;
+    left: 600px;
+    z-index: 1;
+
+    background: url(imagenes/palmera1.png) no-repeat;
+
+}
+
+
+
+
+
+@keyframes animarMono{
+    from{
+        background-position-x: -84px;
+    }
+    to{
+        background-position-x: -252px;
+    }
+}
+
+#restart-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  
